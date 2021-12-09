@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/acd-versions
+acd-versions.so
+acd-versions.dylib
+acd-versions.dll
+acd-versions.a
+acd-versions.lib
+acd-versions-test-*
+*.exe
+*.o
+*.obj
+*.lst
