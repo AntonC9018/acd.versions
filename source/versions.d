@@ -22,7 +22,7 @@ module acd.versions;
 		version = B;
   	static if (Version.B)
 		version = C;
-    static assert(Version.C);
+	static assert(Version.C);
 
 	// Save as expressions
 	enum BC = Version.B && Version.C;
