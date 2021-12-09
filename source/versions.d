@@ -12,19 +12,18 @@ module acd.versions;
 	version = Hello;
 	static assert(Version.Hello && !Version.Foo);
 
-	// Setting version conditionally
+	// Setting version conditionally.
 	static if (Version.Hello)
 		version = World;
 	static assert(Version.World);
 
-	// Setting version if a version is not defined
+	// Setting version if a version is not defined.
 	static if (!Version.A)
 		version = B;
-  	static if (Version.B)
-		version = C;
-	static assert(Version.C);
+	static assert(Version.B);
 
-	// Save as expressions
+	// Using as boolean expressions and assigning to a variable.
+	version = C;
 	enum BC = Version.B && Version.C;
 	static assert(BC);
 	```
