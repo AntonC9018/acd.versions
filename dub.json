@@ -3,7 +3,7 @@
 		"Anton Curmanschii"
 	],
 	"copyright": "Copyright © 2021, Anton Curmanschii",
-	"description": ".",
+	"description": "Treat D versions as boolean expressions.",
 	"license": "MIT",
 	"name": "acd-versions"
 }

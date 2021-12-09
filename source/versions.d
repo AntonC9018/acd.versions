@@ -6,8 +6,11 @@ module acd.versions;
 	Examples:
 
 	```d
+	import acd.versions : Versions;
+	mixin Versions;
+
 	version = Hello;
-	static assert (Version.Hello && !Version.Foo);
+	static assert(Version.Hello && !Version.Foo);
 
 	// Setting version conditionally
 	static if (Version.Hello)
@@ -40,16 +43,19 @@ module acd.versions;
 	The other assumptions you have about the way this works will just hold true.
 	Surprisingly, it just works!
 */
-struct Version
+mixin template Versions()
 {
-    @disable this();
-	static template opDispatch(string id)
-    {	
-        mixin(`
-            version (`, id, `) 
-              	enum opDispatch = true;
-            else 
-              	enum opDispatch = false;
-        `);
-    }
+	struct Version
+	{
+		@disable this();
+		static template opDispatch(string id)
+		{	
+			mixin(`
+				version (`, id, `) 
+					enum opDispatch = true;
+				else 
+					enum opDispatch = false;
+			`);
+		}
+	}
 }
