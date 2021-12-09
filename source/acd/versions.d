@@ -1,4 +1,4 @@
-module source.acd.versions;
+module acd.versions;
 
 /** 
 	Lets you get a given version as a boolean expression.
